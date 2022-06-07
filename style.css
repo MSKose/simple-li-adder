@@ -10,5 +10,8 @@ section button {
 
 section .diller {
     width: 20rem;
-    
+}
+
+.red {
+    color: red;
 }

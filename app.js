@@ -19,6 +19,10 @@ ekleBtn.addEventListener('click', () => {
     
 });
 
+silBtn.addEventListener('click', () => {
+    ul.childElementCount > 0 ? ul.removeChild(ul.lastElementChild) : alert ("No language to delete")
+})
+
 const redControl = () => {
     document.querySelectorAll('ul li').forEach((lan) => {     // here lan represents li elements in a forEach
         const low = lan.textContent.toLowerCase();
@@ -29,3 +33,16 @@ const redControl = () => {
     })
 }
 
+dilInput.addEventListener('keydown', (e) => {
+    console.log(e)
+    if (e.code === "Enter"){
+        ekleBtn.click();                             // burada zaten yukarida tanimladigimiz ekleme fonskiyonunu cagiriyoruz
+    }
+    if (e.code === "Delete") {
+        silBtn.onclick();
+    }
+})
+
+window.onload = () => {
+    dilInput.focus();       // cursor focuses on the input on load
+}
